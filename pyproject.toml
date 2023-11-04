@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pyskeleton"
+version = "0.1.0"
+description = ""
+authors = ["Markus Straub <markus.straub@ait.ac.at>"]
+readme = "README.md"
+packages = [{ include = "pyskeleton", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7"
+
+# adding src to pythonpath as documented in https://docs.pytest.org/en/7.4.x/explanation/goodpractices.html
+# is not necessary, poetry does the necessary setup in the virtual environment already.
+#[tool.pytest.ini_options]
+#pythonpath = "src"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
